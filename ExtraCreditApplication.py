@@ -3,16 +3,17 @@
 # PROGRAMMER: Khiem Nguyen, Richie Nguyen, Terrence Chung
 
 # IMPORT STATEMENTS
-from Controller.ApplicationController import ApplicationController
-from Model.Inside_Geometric_Shape import Inside_Geometric_Shape
-from Model.Outside_Geometric_Shape import Outside_Geometric_Shape
-from View import ApplicationView
+from ApplicationController import ApplicationController
+from InsideGeometricShape import InsideGeometricShape
+from OutsideGeometricShape import OutsideGeometricShape
+from ApplicationView import ApplicationView
 
 # FUNCTIONS
 
 def application():
-    model = Shit()
-    # view = KineticEnergyCalculatorView()
-    # controller = KineticEnergyCalculatorController(model, view)
+    outside_model = OutsideGeometricShape(25, "black", "red")
+    inside_model = InsideGeometricShape(10, 10, "black", "red")
+    view = ApplicationView()
+    controller = ApplicationController(outside_model, inside_model, view)
 
-kinetic_energy_application()
+application()
