@@ -1,8 +1,9 @@
 # PROGRAMMER: Terrence Chung
 
 # IMPORT STATEMENTS
+import math
 
-class Outside_Geometric_Shape:
+class OutsideGeometricShape():
 
     # CONSTRUCTOR
     def __init__(self, radius, line_color, fill_color):
@@ -63,7 +64,7 @@ class Outside_Geometric_Shape:
 
     def set_fill_color(self, fill_color):
         valid_colors = ("red", "white", "blue", "orange", "white", "black", "green", "yellow", "purple")
-        if type(line_color) is not str:
+        if type(fill_color) is not str:
             raise TypeError("Outside_Geometric_Shape.py set_fill_color fill_color - fill color must be a valid string.")
         if fill_color.lower() not in valid_colors:
             raise ValueError("Outside_Geometric_Shape.py set_fill_color fill_color - fill color must be a valid color (Red, White, Blue, Orange, White, Black, Green, Yellow, Purple).")
@@ -71,8 +72,8 @@ class Outside_Geometric_Shape:
 
 
     def area(self):
-        return Math.PI * (self.__radius ** 2)
+        return math.PI * (self.__radius ** 2)
 
 
     def perimeter(self):
-        return 2 * Math.PI * self.__radius
+        return 2 * math.PI * self.__radius
